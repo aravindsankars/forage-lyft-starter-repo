@@ -1,22 +1,10 @@
-from abc import ABC, abstractmethod
 import Serviceable
-from engine import Engine
-from battery import Battery
 
-class Car(Serviceable, Engine, Battery):
+class Car(Serviceable):
     def __init__(self, engine, battery):
-        self._engine = engine
-        self._battery = battery
-
-    # @property
-    # def engine(self):
-    #     return self._engine
-
-    # @property
-    # def battery(self):
-    #     return self._battery
+        self.engine = engine
+        self.battery = battery
     
-    @abstractmethod
     def needs_service(self) -> bool:
         engine_service = self._engine.needs_service()
         battery_service = self._battery.needs_service()
