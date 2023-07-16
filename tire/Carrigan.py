@@ -5,4 +5,7 @@ class Carrigan(Tire):
         self.wear = wear
 
     def needs_service(self):
-        return self.wear
+        for tire in self.wear:
+            if tire >= 0.9:
+                return True
+        return False
